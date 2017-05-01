@@ -1,0 +1,118 @@
+.main .navbar-header a{
+	padding-left: 35px;
+	font-size: 37px;
+	color: white;
+	text-decoration: none;
+	font-family: 'Lobster', cursive;
+}
+
+.navbar-nav{
+	color: #979C9C;
+	font-size: 17px;
+}
+
+.navbar-header img{
+	padding-top: 5px;
+}
+
+p{
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.tour{
+	padding-top: 31px;
+	color: white;
+	background-color: #343642;
+}
+
+.tour h1{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 50px;
+}
+
+.tour p{
+	font-size: 25px;
+}
+
+.motor h1{
+	font-family: 'Montserrat', sans-serif;
+	color: #343642;
+}
+
+.haveFun{
+	color: white;
+	background-color: #343642;
+}
+
+.haveFun h1{
+	text-align: center;
+}
+
+.haveFun p{
+	font-size: 20px;
+}
+
+.location{
+	padding-top: 50px;
+	color: white;
+	background-color: #343642;
+}
+
+.location h1{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 50px;
+}
+
+.hotels{
+	padding-top: 40px;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 20px;
+}
+
+.hotels h1{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 35px;
+	color: #343642;
+}
+
+.history{
+	padding-top: 70px;
+	background-color: #343642;
+}
+
+.history h1{
+	font-family: 'Montserrat', sans-serif;
+}
+
+.history p{
+	font-family: 'Source Sans Pro', sans-serif;
+	color: black;
+}
+
+footer{
+	color: white;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+footer h4{
+	font-size: 20px;
+}
+
+footer .footer-above{
+	background-color: #962D3E;
+	font-size: 16px;
+}
+
+footer .footer-above a {
+	color: white;
+	text-decoration: none;
+
+}
+
+footer .footer-above a:hover {
+	border-bottom: 2px solid white;
+}
+
+footer .footer-below{
+	background-color: #5C1B26;
+}
