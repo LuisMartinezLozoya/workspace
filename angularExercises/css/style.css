@@ -1,0 +1,98 @@
+.main{
+	background-color: #979C9C;
+}
+
+.search h3{
+	color: black;
+	font-size: 25px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.search select{
+	font-size: 15px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.search input{
+	font-size: 15px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+
+.bookArea h2{
+	color: #348899;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.bookArea h3{
+	color: #85A422;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.bookArea{
+	font-size: 16px;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.bookArea img{
+	margin-top: 28px;
+}
+
+.navbar-fixed-top{
+	background-color: #282933;		
+}
+
+.navbar-fixed-top h1{
+	padding-left: 32px;
+	font-family: 'Inknut Antiqua', serif;
+	font-size: 35px;
+	color: white;
+}
+
+.navbar-header img{
+	margin-top: 20px;
+}
+
+.search{
+	padding-top: 35px;
+}
+
+section{
+	padding-top: 50px;
+}
+
+section a{
+	text-decoration: none;
+	font-size: 16px;
+	font-family: 'Source Sans Pro', sans-serif;
+	color: #348899;
+}
+
+section>.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus{
+text-decoration: none;
+font-family: 'Source Sans Pro', sans-serif;
+background-color:#348899;
+color:white;
+}
+
+input[type=submit] {
+    padding:5px 15px;
+    color: white; 
+    background:#348899;
+    border:0 none;
+    border-radius: 5px; 
+}
+
+.ng-invalid.ng-dirty{
+	border-color: #FA787E;
+}
+
+.ng-valid.ng-dirty{
+	border-color: #78fA89;
+}
+
+footer .footer-below{
+	padding-top: 5px;
+	color: white;
+	background-color: #282933;
+}

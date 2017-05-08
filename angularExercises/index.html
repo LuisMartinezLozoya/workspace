@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html ng-app="store">
+<head>
+	<meta charset="UTF-8">
+	<title>Flatlander Store</title>
+	<link href="https://fonts.googleapis.com/css?family=Lobster|Montserrat|Inknut+Antiqua" 
+	rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+	 <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+</head>
+<body>
+
+	<div class="main">
+	<div class="navbar ">
+			<div class="navbar-fixed-top">
+				<div class="container">
+				<div class="navbar-header">
+						<img src="public/logo.png" alt="" width="30" height="37.25" class="navbar-left">
+						<h1 class="navbar-left navbar-brand">
+						Fontaine's Books
+						</h1>
+				</div>
+				</div>
+			</div>
+		</div>
+	
+	<div class="search">
+		<div class="container">
+			<div class="row">
+				<ul class="list-inline">
+					<li>
+					 	<h3>Search</h3>
+					</li>
+					<li>
+						<input ng-model="query.title" placeholder="Title">
+					</li>
+					<li>
+						<h3>Order by</h3>
+					</li>
+					<li>
+					 	<select ng-model="orderField">
+						 	<option value="title">Title</option>
+						    <option value="author">Author</option>
+					    </select>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	
+	<div class="bookArea">	
+		<div class="container"> 
+			<div ng-controller="StoreController as store">
+			<ul class="list-group">
+				<li class="list-group-item" ng-repeat="product in store.products| filter:query | orderBy:orderField">
+					<div class="row">
+					<div class="col-sm-5 hidden-xs text-center">
+						<img ng-src="{{product.images[0].full}}">
+					</div>
+					
+					<div class="col-sm-7">
+					<h2>
+						{{product.title}}
+						<em class="pull-right">{{product.price | currency}}</em>
+					</h2>
+
+					<h4>
+						{{product.author}}
+					</h4>
+					
+					<section ng-init="panel.tab" ng-controller="PanelController as panel">  
+						
+						<ul class="nav nav-pills ">
+							<li ng-class="{active: panel.isSelected(1)}">
+								<a href="" ng-click="panel.selectTab(1)">Description</a></li>
+							<li ng-class="{active: panel.isSelected(2)}">
+								<a href="" ng-click="panel.selectTab(2)">Details</a></li>
+							<li ng-class="{active: panel.isSelected(3)}">
+								<a href="" ng-click="panel.selectTab(3)">Reviews</a></li>
+						</ul>
+
+						<div class="panel" ng-show="panel.isSelected(1)">
+							<br>
+							<h4>Description</h4>
+							<p>{{product.description}}</p>
+						</div>
+
+						<div class="panel" ng-show="panel.isSelected(2)">
+							<br>
+							<h4>Details</h4>
+								<ul class="list-unstyled">
+								  <li>
+								    <strong>Editorial: </strong>
+								    	{{product.editorial}}</li>
+								  <li>
+								    <strong>Year: </strong>
+								    	{{product.year}}</li>
+								  <li>
+								    <strong>Pages: </strong>
+								   	 	{{product.pages}}</li>
+								</ul>
+						</div>
+
+						<div class="panel" ng-show="panel.isSelected(3)">
+							<br>
+							<h4>Reviews</h4>
+							<form name="reviewForm" class="form.horizontal" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
+								<blockquote ng-repeat="review in product.reviews">
+									<b>Stars: 
+									{{review.stars}}</b>
+									{{review.body}}
+									<cite>by: 
+									{{review.user}}</cite>
+								</blockquote>
+								<div class="form-group">
+									<label>Star: </label>
+									<select class="form-control" ng-model="reviewCtrl.review.stars" required>
+										<option value="1">1 star</option>
+										<option value="2">2 stars</option>
+										<option value="3">3 stars</option>
+										<option value="4">4 stars</option>
+										<option value="5">5 stars</option>
+								</select>
+								</div>
+								<div class="form-group">
+									<textarea class="form-control" ng-model="reviewCtrl.review.body" placeholder="please add your review" name="" id="" cols="30" rows="10" required></textarea>
+								</div>
+								<div class="form-group">
+									<label>by: </label>
+									<input placeholder="sombebody@something.com" class="form-control" type="email" ng-model="reviewCtrl.review.user" required>
+								</div>
+								<div>The review form is {{reviewForm.$valid}}</div>
+								<input type="submit" value="Submit" class="miSub">
+							</form>
+						</div>
+					</section>
+					</div>
+					</div>
+				</li>
+				</ul>
+			</div>
+		</div>
+	</div>	
+	</div>
+	<footer class="text-center">
+		<div class="footer-below">
+			<div class="container">
+				<p>Copyright&copy; Nuovo Vesuvio</p>
+			</div>
+		</div>
+	</footer>	
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>	
+	<script src="js/app.js"></script>	
+</body>
+
+</html>
